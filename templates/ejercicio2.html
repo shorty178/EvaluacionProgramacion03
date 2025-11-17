@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Ejercicio 2 - Formulario de Nombres{% endblock %}
+
+{% block content %}
+    <h1>Formulario de Nombres</h1>
+        <form method="POST" action="{{ url_for('ejercicio2') }}">
+            <div class="form-group">
+                <label for="nombre1"><strong>Nombre 1:</strong></label>
+                <input type="text" id="nombre1" name="nombre1" 
+                       value="{{ nombre1 if mostrar_resultado else '' }}" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre2"><strong>Nombre 2:</strong></label>
+                <input type="text" id="nombre2" name="nombre2" 
+                       value="{{ nombre2 if mostrar_resultado else '' }}" 
+                       required>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre3"><strong>Nombre 3:</strong></label>
+                <input type="text" id="nombre3" name="nombre3" 
+                       value="{{ nombre3 if mostrar_resultado else '' }}" 
+                       required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        
+        {% if mostrar_resultado %}
+        <div class="resultado">
+            <p>El nombre con mayor cantidad de caracteres es: <strong>{{ nombre_mas_largo }}</strong></p>
+            <p>El nombre tiene: <strong>{{ cantidad_caracteres }} caracteres</strong></p>
+        </div>
+        {% endif %}
+        
+        <div class="back-link">
+            <a href="{{ url_for('index') }}">← Volver al menú principal</a>
+        </div>
+{% endblock %}
+

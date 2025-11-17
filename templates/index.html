@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Menú Principal{% endblock %}
+
+{% block content %}
+    <h1>Menú Principal</h1>
+    <div class="button-container">
+        <a href="{{ url_for('ejercicio1') }}" class="btn btn-primary">Ejercicio 1</a>
+        <a href="{{ url_for('ejercicio2') }}" class="btn btn-primary">Ejercicio 2</a>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Error {{ codigo }}{% endblock %}
+
+{% block content %}
+    <div class="error-container">
+        <h1>Error {{ codigo }}</h1>
+        <p class="error-message">{{ mensaje }}</p>
+        <div class="back-link">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Volver al menú principal</a>
+        </div>
+    </div>
+{% endblock %}
+
